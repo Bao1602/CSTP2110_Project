@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+    <script type="module" src="login.js"></script>
+</head>
+<body>
+  <div class="flex justify-center items-center font-[sans-serif] text-[#333] h-full min-h-screen p-4"
+  style="background-image: url(https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-repeat: no-repeat; background-size: cover;">
+  <div class="max-w-md w-full mx-auto">
+    <div class="bg-opacity-70 bg-white rounded-2xl p-6 shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)]">
+      <div class="mb-10">
+        <h3 class="text-3xl font-extrabold">Login</h3>
+      </div>
+      <div>
+        <div class="relative flex items-center">
+          <input name="email" type="email" required
+            class="bg-transparent w-full text-sm border-b border-[#333] px-2 py-3 outline-none placeholder:text-[#333]"
+            placeholder="Enter email" id="email"/>
+        </div>
+      </div>
+      <div class="mt-8">
+        <div class="relative flex items-center">
+          <input name="password" type="password" required
+            class="bg-transparent w-full text-sm border-b border-[#333] px-2 py-3 outline-none placeholder:text-[#333]"
+            placeholder="Enter password" id="password"/>
+          <a href="#" class="text-sm text-blue-600 hover:underline ml-2">Forgot Password?</a>
+        </div>
+      </div>
+      <div class="mt-10">
+        <button onclick="login()" class="w-full py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-red-600 hover:bg-cyan-400 focus:outline-none">
+          Login
+        </button>
+        <p class="text-sm text-center mt-6">Don't have an account?
+          <a href="signup.html"
+            class="font-semibold hover:underline ml-1 whitespace-nowrap">Register!
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p class="text-sm text-center mt-6">Don't have an account?
+        <a href="signup.html"
+          class="font-semibold hover:underline ml-1 whitespace-nowrap">Register!
+        </a>
+      </p>
+</body>
+</html> -->

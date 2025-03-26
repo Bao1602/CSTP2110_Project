@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Signup</title>
+    <script src="signup.js" defer></script>
+</head>
+<body>
+    <div class="flex justify-center items-center font-[sans-serif] text-[#333] h-full min-h-screen p-4"
+    style="background-image: url(https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-repeat: no-repeat; background-size: cover;">
+    <div class="max-w-md w-full mx-auto">
+        <div class="bg-opacity-70 bg-white rounded-2xl p-6 shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)]">
+            <div class="mb-10">
+                <h3 class="text-3xl font-extrabold">Register account</h3>
+            </div>
+
+            <div>
+                <div class="relative flex items-center">
+                    <input name="email" type="email" required
+                        class="bg-transparent w-full text-sm border-b border-[#333] px-2 py-3 outline-none placeholder:text-[#333]"
+                        placeholder="Enter email" id="email"/>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <div class="relative flex items-center">
+                    <input name="password" type="password" required
+                        class="bg-transparent w-full text-sm border-b border-[#333] px-2 py-3 outline-none placeholder:text-[#333]"
+                        placeholder="Enter password" id="password"/>
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <button onclick="signup()"
+                    class="w-full py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-red-600 hover:bg-cyan-400 focus:outline-none">
+                    Sign Up
+                </button>
+                <p class="text-sm text-center mt-6">Already have an account?
+                    <a href="index.html" class="font-semibold hover:underline ml-1 whitespace-nowrap">Login!</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <script src="signup.js" defer></script>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <p class="text-sm text-center mt-6">have an account already?
+        <a href="login.html"
+          class="font-semibold hover:underline ml-1 whitespace-nowrap">Login!
+        </a>
+      </p>
+</body>
+</html> -->
