@@ -25,7 +25,7 @@ const signup = async () => {
     }
 
     const userData = {
-        ClientId: "363jkb3ojf89mva2ijs849v3g7",
+        ClientId: "7ufpgivr5bj113bc1rarviugoi",
         Username: email,
         Password: password,
         UserAttributes: [

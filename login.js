@@ -13,7 +13,7 @@ const login = async () => {
 
     const loginData = {
         AuthFlow: "USER_PASSWORD_AUTH",
-        ClientId: "363jkb3ojf89mva2ijs849v3g7",
+        ClientId: "7ufpgivr5bj113bc1rarviugoi",
         AuthParameters: {
             USERNAME: email,
             PASSWORD: password
@@ -46,7 +46,7 @@ const login = async () => {
             // Prepare challenge response
             const challengeRequestData = {
                 ChallengeName: "NEW_PASSWORD_REQUIRED",
-                ClientId: "363jkb3ojf89mva2ijs849v3g7",
+                ClientId: "7ufpgivr5bj113bc1rarviugoi",
                 ChallengeResponses: {
                     USERNAME: email,
                     NEW_PASSWORD: newPassword,

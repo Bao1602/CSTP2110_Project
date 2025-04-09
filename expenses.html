@@ -1,16 +1,98 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Expenses</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="expenses.js" defer></script>
 </head>
 <body>
-    <h2>Expense Tracker</h2>
-    <input type="number" id="amount" placeholder="Amount">
-    <input type="text" id="description" placeholder="Description">
-    <button onclick="addExpense()">Add Expense</button>
-    <h3>Set Alert Threshold</h3>
-    <input type="number" id="threshold" placeholder="Threshold">
-    <button onclick="setThreshold()">Save Threshold</button>
+
+    <header>
+        <nav>
+            <div>
+                <button onclick="logout(event)" type="submit" class="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Logout</button>
+              </div>
+        </nav>
+    </header>
+
+<div class="grid grid-cols-3" style="background-image: url(https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-repeat: no-repeat; background-size: cover;">
+  <section class=" col" >
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div class="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Create An Expense
+                </h1>
+                <Box class="space-y-4 md:space-y-6" >
+                    <div>
+                        <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Set a Limit </label>
+                        <input  id="threshold" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your limit" >
+                    </div>
+
+                    <button onclick="setThreshold()" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> set threshold </button>
+
+                    <div>
+                        <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Expense Name</label>
+                        <input  id="expenseName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Expense Name" >
+                    </div>
+                    <div>
+                        <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
+                        <input   id="amount" type="number" placeholder="Type a Number ex: 100" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                    </div>
+                    <div>
+                        <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
+                        <input  id="date" type="date" placeholder="Input date MM/DD/YYYY" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                    </div>
+                    <div class="inline-block relative w-50">
+                        <select id="category" class="block appearance-none w-full bg-gray-50 border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                          <option>Choose Category</option>
+                          <option>Food</option>
+                          <option>Internet</option>
+                          <option>Shopping</option>
+                          <option>Electricity</option>
+                          <option>Others</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                    <button onclick="createExpense(event)" class="w-full py-2.5 px-4 text-sm font-semibold rounded-full text-white bg-red-600 hover:bg-cyan-400 focus:outline-none">Create Expense</button>
+                </Box>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div class=" h-5/6 w-9/12">
+            <h1 style=" font-size: 30px; margin-bottom: 50px; color: antiquewhite;"> EXPENSE LIST </h1>
+            <select id="monthSelector" onchange="filterExpensesByMonth()">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <div id="allExpense">
+                <div class=" flex border-gray-300 bg-cyan-400 p-6 space-y-4 md:space-y-6 sm:p-8">
+                </div>
+            </div> 
+        </div>
+    </div>
+  </section>
+</div>
 </body>
 </html>
+
+
+

@@ -13,7 +13,7 @@ const verifyEmail = async () => {
     }
 
     const verificationData = {
-        ClientId: "363jkb3ojf89mva2ijs849v3g7",
+        ClientId: "7ufpgivr5bj113bc1rarviugoi",
         Username: email,
         ConfirmationCode: verificationCode
     };
@@ -70,7 +70,7 @@ const resendVerificationCode = async () => {
     }
 
     const resendData = {
-        ClientId: "363jkb3ojf89mva2ijs849v3g7",
+        ClientId: "7ufpgivr5bj113bc1rarviugoi",
         Username: email
     };
 
